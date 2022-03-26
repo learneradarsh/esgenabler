@@ -1,0 +1,25 @@
+.card {
+  padding: 10px 20px;
+
+  .main-indicators {
+    display: flex;
+    justify-content: space-between;
+    .green {
+      color: green;
+    }
+    .red {
+      color: red;
+    }
+  }
+  .card-head {
+    button {
+      width: 100%;
+      background-color: black;
+      color: white;
+    }
+  }
+  .card-body {
+    border-top: 1px solid grey;
+    margin: 10px -20px;
+  }
+}
