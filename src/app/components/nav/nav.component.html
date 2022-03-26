@@ -1,6 +1,25 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand">ESGEnabler</a>
+<nav class="navbar navbar-dark fixed-top bg-light">
+  <div class="container">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link navbar-brand dropdown-toggle"
+          href="#"
+          id="navbarScrollingDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          ESGEnabler
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+          <li><a class="dropdown-item" href="#">All Companies</a></li>
+          <li><a class="dropdown-item" href="#">Intelligence</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Impact Calculator</a></li>
+        </ul>
+      </li>
+    </ul>
     <form class="d-flex">
       <input
         class="form-control me-2"
@@ -8,7 +27,7 @@
         placeholder="Search"
         aria-label="Search"
       />
-      <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
+    <button class="btn btn-outline-success" type="submit">Login</button>
   </div>
 </nav>
