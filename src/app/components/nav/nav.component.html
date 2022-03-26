@@ -48,8 +48,21 @@
         aria-label="Search"
       />
     </form>
-    <button class="btn btn-outline-success" type="submit" (click)="goToLogin()">
+    <button
+      *ngIf="!showLogIn"
+      class="btn btn-success"
+      type="submit"
+      (click)="goToLogin()"
+    >
       Login
+    </button>
+    <button
+      *ngIf="showLogIn"
+      class="btn btn-success"
+      type="submit"
+      (click)="goToLogout()"
+    >
+      Logout
     </button>
   </div>
 </nav>

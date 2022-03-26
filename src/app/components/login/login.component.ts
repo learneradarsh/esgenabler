@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,7 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private readonly router: Router) {}
+  constructor(
+    private readonly router: Router,
+    private readonly authService: AuthService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -26,6 +30,7 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password,
     };
     if (req.email_id === 'admin@psnext.com' && req.password === '1234') {
+      this.authService.login();
       this.router.navigate(['/dashboard']);
     } else {
       alert('Invalid credentials, Please try again');
