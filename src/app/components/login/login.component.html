@@ -1,0 +1,50 @@
+<div class="custom-flex">
+  <div class="tool-login-form">
+    <h2 class="center">Welcome back!</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mt-4">
+        <label class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          [class.is-invalid]="
+            loginForm.get('email').invalid && loginForm.get('email').touched
+          "
+          required
+        />
+        <small
+          class="text-danger"
+          *ngIf="loginForm.get('email').errors?.pattern"
+          >Email address is invalid</small
+        >
+      </div>
+      <div class="mt-4">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          required
+        />
+      </div>
+      <div class="mt-4 center login-btn-container">
+        <button
+          type="submit"
+          class="btn btn-login"
+          [disabled]="!loginForm.valid"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="tool-branding">
+    <div class="tool-branding-text">
+      <h2>Want To Invest In Environment</h2>
+      <h2>Friendly Stocks?</h2>
+      <button class="btn btn-lg mt-4" type="button">Signup Here</button>
+      <p class="mt-4">ESGEnabler enhaces your investing experience</p>
+    </div>
+  </div>
+</div>

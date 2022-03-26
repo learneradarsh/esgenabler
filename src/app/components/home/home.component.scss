@@ -1,0 +1,119 @@
+.tool-header {
+  background: black;
+  color: white;
+  padding: 20%;
+  margin: -25px 0px;
+  div {
+    margin-top: -15%;
+  }
+}
+.featured-background {
+  margin-top: -20%;
+  .tool-img {
+    text-align: center;
+    img {
+      width: 70%;
+    }
+  }
+}
+
+.featured-btn-container {
+  text-align: center;
+  margin-top: -2%;
+  .get-stared-button {
+    background: #e77431;
+    border: none;
+    padding: 20px 80px;
+    color: white;
+  }
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3%;
+}
+
+.fa-bell {
+  font-size: 2rem;
+}
+
+.card {
+  border: 1px solid black;
+  box-shadow: 1px 7px 6px lightgrey;
+  padding: 20px;
+}
+
+.how-it-works-steps {
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  color: white;
+  margin: 2% 10%;
+  border-radius: 10px;
+  padding: 5%;
+  ul {
+    list-style: none;
+    li:nth-child(2),
+    li:nth-child(3) {
+      margin-top: 100px !important;
+      p {
+        text-align: justify;
+      }
+    }
+  }
+  .margin-left-15 {
+    margin-left: 15%;
+  }
+  .number-patch {
+    background: #007cc3;
+    border-radius: 50%;
+    padding: 15px 25px;
+    margin-right: 15px;
+  }
+}
+
+.why-section {
+  margin-top: 5%;
+}
+
+.how-it-works-section {
+  margin-top: 5%;
+}
+
+/* SMARTPHONES PORTRAIT */
+// @media only screen and (min-width: 320px) {
+
+// }
+
+/* SMARTPHONES LANDSCAPE */
+// @media only screen and (min-width: 480px) {
+
+// }
+
+/* TABLETS PORTRAIT */
+@media only screen and (min-width: 768px) and (max-width: 836px) {
+  .tool-header {
+    margin: 30px 0px;
+  }
+
+  .how-it-works-steps {
+    display: flex;
+    flex-direction: column-reverse;
+
+    div {
+      width: 100% !important;
+    }
+  }
+}
+
+/* TABLET LANDSCAPE / DESKTOP */
+@media only screen and (min-width: 1024px) {
+  .tool-header {
+    margin: 25px 0px;
+  }
+
+  // .how-it-works-steps {
+  //   margin: 2% 2%;
+  // }
+}
