@@ -9,4 +9,12 @@
 
 nav {
   border-bottom: 1px solid black;
+  .logo {
+    transform: scale(1.4);
+    margin-right: 10px;
+  }
+}
+
+.bg-light {
+  background-color: #fff !important;
 }
