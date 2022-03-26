@@ -1,3 +1,4 @@
+import { ShowAllCompaniesComponent } from './components/show-all-companies/show-all-companies.component';
 import { ImpactCalculatorComponent } from './components/impact-calculator/impact-calculator.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
@@ -26,6 +27,11 @@ const routes: Routes = [
     path: 'dashboard',
     pathMatch: 'full',
     component: DashboardComponent,
+  },
+  {
+    path: 'showall',
+    pathMatch: 'full',
+    component: ShowAllCompaniesComponent,
   },
   {
     path: '**',

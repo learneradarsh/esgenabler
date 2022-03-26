@@ -9,13 +9,23 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
+          <img
+            class="logo"
+            src="../../../assets/logo.png"
+            width="70"
+            height="50"
+          />
           ESGEnabler
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
           <li>
             <a class="dropdown-item" [routerLink]="['/']">Home</a>
           </li>
-          <li><a class="dropdown-item" href="#">All Companies</a></li>
+          <li>
+            <a class="dropdown-item" [routerLink]="['/showall']"
+              >All Companies</a
+            >
+          </li>
           <li>
             <a class="dropdown-item" [routerLink]="['/dashboard']"
               >Intelligence</a
@@ -38,8 +48,21 @@
         aria-label="Search"
       />
     </form>
-    <button class="btn btn-outline-success" type="submit" (click)="goToLogin()">
+    <button
+      *ngIf="!showLogIn"
+      class="btn btn-success"
+      type="submit"
+      (click)="goToLogin()"
+    >
       Login
+    </button>
+    <button
+      *ngIf="showLogIn"
+      class="btn btn-success"
+      type="submit"
+      (click)="goToLogout()"
+    >
+      Logout
     </button>
   </div>
 </nav>

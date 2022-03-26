@@ -1,12 +1,15 @@
 .navbar-dark .navbar-nav .nav-link {
   color: #000 !important;
 }
-.btn-outline-success {
-  color: #000;
-  border-color: #000;
-  background-color: #fff;
-}
 
 nav {
   border-bottom: 1px solid black;
+  .logo {
+    transform: scale(1.4);
+    margin-right: 10px;
+  }
+}
+
+.bg-light {
+  background-color: #fff !important;
 }

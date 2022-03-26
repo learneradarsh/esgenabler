@@ -1,6 +1,6 @@
 .tool-login-form {
   background: white;
-  border: 1px solid black;
+  border: 1px solid green;
   padding: 60px;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .tool-branding {
-  background-color: black;
+  background-color: green;
   padding: 60px;
   color: white;
   .tool-branding-text {
@@ -33,12 +33,5 @@
 .login-btn-container {
   button {
     width: 100%;
-    color: black;
-    border: 1px solid black;
-    &:hover {
-      color: white;
-      background: black;
-      border: 1px solid white;
-    }
   }
 }

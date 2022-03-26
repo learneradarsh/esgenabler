@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,11 +8,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  constructor(private readonly router: Router) {}
+  showLogIn: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(
+    private readonly router: Router,
+    private readonly authService: AuthService
+  ) {}
+
+  ngOnInit(): void {
+    this.showLogIn = this.authService.isUserLoggedIn();
+  }
 
   goToLogin() {
     this.router.navigate(['/login']);
+  }
+
+  goToLogout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 }
