@@ -1,0 +1,21 @@
+.tool-footer {
+  display: flex;
+  padding: 5px;
+  margin-top: 10%;
+  background: lightgrey;
+  align-items: center;
+  border-top: 2px solid grey;
+  .margin-left {
+    margin-left: 6%;
+  }
+  justify-content: space-between;
+  .tool-footer-sub-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    p {
+      margin-left: 15px;
+    }
+  }
+}

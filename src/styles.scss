@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+$light-grey: #d3d3d363;
+
+body {
+  background-color: $light-grey;
+}
+
 /** css overrides for bootstrap **/
 .navbar-nav .dropdown-menu {
   position: absolute !important;

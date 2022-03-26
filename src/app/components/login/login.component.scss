@@ -1,0 +1,43 @@
+.tool-login-form {
+  background: white;
+  padding: 60px;
+}
+
+.custom-flex {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 10%;
+  border-radius: 10px;
+}
+
+.tool-branding {
+  background-color: black;
+  padding: 60px;
+  color: white;
+  .tool-branding-text {
+    position: relative;
+    top: 20%;
+    button {
+      color: white;
+      border: 1px solid white;
+      &:hover {
+        color: black;
+        background: white;
+      }
+    }
+  }
+}
+
+.login-btn-container {
+  button {
+    width: 100%;
+    color: black;
+    border: 1px solid black;
+    &:hover {
+      color: white;
+      background: black;
+      border: 1px solid white;
+    }
+  }
+}
