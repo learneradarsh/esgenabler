@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImpactCalculatorComponent } from './components/impact-calculator/impact-calculator.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CompanySummaryComponent } from './components/dashboard/company-summary/company-summary.component';
+import { ShowAllCompaniesComponent } from './components/show-all-companies/show-all-companies.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CompanySummaryComponent } from './components/dashboard/company-summary/
     ImpactCalculatorComponent,
     DashboardComponent,
     CompanySummaryComponent,
+    ShowAllCompaniesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
