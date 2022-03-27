@@ -6,4 +6,8 @@ th {
 
 table {
   border-collapse: collapse;
+  th,
+  td {
+    padding: 5px;
+  }
 }

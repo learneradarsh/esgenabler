@@ -30,4 +30,9 @@ export class SettingsComponent implements OnInit {
   ];
 
   ngOnInit(): void {}
+
+  saveConfig() {
+    console.log('save configuration');
+    alert('Configuration Saved Successfully');
+  }
 }
