@@ -13,6 +13,8 @@ import { ImpactCalculatorComponent } from './components/impact-calculator/impact
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CompanySummaryComponent } from './components/dashboard/company-summary/company-summary.component';
 import { ShowAllCompaniesComponent } from './components/show-all-companies/show-all-companies.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { IndicatorCardComponent } from './components/dashboard/indicator-card/indicator-card.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { ShowAllCompaniesComponent } from './components/show-all-companies/show-
     DashboardComponent,
     CompanySummaryComponent,
     ShowAllCompaniesComponent,
+    SettingsComponent,
+    IndicatorCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
