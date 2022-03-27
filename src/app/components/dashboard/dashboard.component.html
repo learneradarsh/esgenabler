@@ -5,12 +5,12 @@
       <li class="nav-item" role="presentation">
         <button
           class="nav-link active"
-          id="home-tab"
+          id="overview-tab"
           data-bs-toggle="tab"
-          data-bs-target="#home"
+          data-bs-target="#overview"
           type="button"
           role="tab"
-          aria-controls="home"
+          aria-controls="overview"
           aria-selected="true"
         >
           Overview
@@ -19,12 +19,12 @@
       <li class="nav-item" role="presentation">
         <button
           class="nav-link"
-          id="profile-tab"
+          id="analysis-tab"
           data-bs-toggle="tab"
-          data-bs-target="#profile"
+          data-bs-target="#analysis"
           type="button"
           role="tab"
-          aria-controls="profile"
+          aria-controls="analysis"
           aria-selected="false"
         >
           ESG Analysis
@@ -33,12 +33,12 @@
       <li class="nav-item" role="presentation">
         <button
           class="nav-link"
-          id="contact-tab"
+          id="news-tab"
           data-bs-toggle="tab"
-          data-bs-target="#contact"
+          data-bs-target="#news"
           type="button"
           role="tab"
-          aria-controls="contact"
+          aria-controls="news"
           aria-selected="false"
         >
           News
@@ -48,25 +48,69 @@
     <div class="tab-content" id="myTabContent">
       <div
         class="tab-pane fade show active"
-        id="home"
+        id="overview"
         role="tabpanel"
-        aria-labelledby="home-tab"
+        aria-labelledby="overview-tab"
       >
-        AAA
+        <div class="container m-top-5">
+          <article class="company-summary">
+            <h4>Company Summary:</h4>
+            <p>
+              Reliance Industries Ltd is India`s largest private sector
+              enterprise, with businesses in the energy and materials value
+              chain.The company works under different business
+              segments:Exploration and Production,Petroleum Refining and
+              Marketing,Petrochemicals,Textiles and Retail.Products and brands
+              offered by the company includes:Crude oil and natural
+              gas,LPG,Propylene,Naphtha,Gasoline,Jet/Aviation Turbine
+              Fuel,Superior Kerosene Oil,High Speed Diesel,Sulphur,Petroleum
+              Coke,Polypropylene,High Density Polyethylene,Low Density
+              Polyethylene,Linear Low Density Polyethylene,Polyvinyl
+              Chloride,Poly Olefin,Suitings ,Shirtings,Readymade
+              Garments,Furnishing fabrics,Day curtains,Automotive
+              upholstery,Suitings,Ready-to-stitch,Take away fabric,Fleet
+              management services,Highway hospitality services,Vehicle care
+              services,Linear Alkyl Benzene,Paraxylene,Purified Terephthalic
+              Acid,Mono Ethylene Glycol,Staple Fibre,Filament Yarn,Texturised
+              yarn,Twisted yarn,Moisture management yarn,Quality certified sleep
+              products & Polyethylene terephthalate
+            </p>
+          </article>
+          <div class="custom-flex">
+            <app-indicator-card
+              [indicatorInfo]="{
+                heading: 'Technology',
+                icon: 'bi-cpu-fill'
+              }"
+            ></app-indicator-card>
+            <app-indicator-card
+              [indicatorInfo]="{
+                heading: 'Largecap',
+                icon: 'bi-building'
+              }"
+            ></app-indicator-card>
+            <app-indicator-card
+              [indicatorInfo]="{
+                heading: 'Low Risk',
+                icon: 'bi-piggy-bank'
+              }"
+            ></app-indicator-card>
+          </div>
+        </div>
       </div>
       <div
         class="tab-pane fade"
-        id="profile"
+        id="analysis"
         role="tabpanel"
-        aria-labelledby="profile-tab"
+        aria-labelledby="analysis-tab"
       >
         BBB
       </div>
       <div
         class="tab-pane fade"
-        id="contact"
+        id="news"
         role="tabpanel"
-        aria-labelledby="contact-tab"
+        aria-labelledby="news-tab"
       >
         CCC
       </div>
