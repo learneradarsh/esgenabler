@@ -9,3 +9,29 @@
 .company-summary {
   text-align: justify;
 }
+
+.esg-indicator-card {
+  padding: 5px 10px;
+}
+
+.esg-container {
+  display: flex;
+  justify-content: space-between;
+  .esg-indicator-card {
+    width: 33%;
+  }
+  .border-green {
+    color: green;
+    border: 4px solid green;
+  }
+
+  .border-blue {
+    color: blue;
+    border: 4px solid blue;
+  }
+
+  .border-yellow {
+    color: rgb(90, 92, 3);
+    border: 4px solid #64641a;
+  }
+}

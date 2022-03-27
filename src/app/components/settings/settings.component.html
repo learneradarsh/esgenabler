@@ -1,1 +1,35 @@
-<div class="container"></div>
+<div class="container m-top-5">
+  <h4>From Where Are Getting Data:</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Data Source</th>
+        <th>Confidence Level</th>
+        <th>Enable</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of configList">
+        <td>{{ item.id }}</td>
+        <td>{{ item.dataSource }}</td>
+        <td>{{ item.confidenceLevel }}</td>
+        <td>
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+              [checked]="item.enable"
+            />
+            <label
+              class="form-check-label"
+              for="flexSwitchCheckDefault"
+            ></label>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

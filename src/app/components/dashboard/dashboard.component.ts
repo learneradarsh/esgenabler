@@ -17,14 +17,14 @@ export class DashboardComponent implements OnInit {
   news: any = {};
   companyBasicInfo: any = {};
   searchTerm: string = '';
+  environmentalModel: any = {};
+  socialModel: any = {};
+  governanceModel: any = {};
   ngOnInit(): void {
     this.route.queryParams
       .pipe(filter((params) => params.company))
       .subscribe((params) => {
-        console.log(params);
-
         this.searchTerm = params.company;
-
         console.log(this.searchTerm);
       });
 
@@ -33,6 +33,9 @@ export class DashboardComponent implements OnInit {
       .subscribe((data) => {
         this.companyBasicInfo = data[0].basicInfo;
         this.news = data[0].news;
+        this.environmentalModel = data[0].environmentalModel;
+        this.socialModel = data[0].socialModel;
+        this.governanceModel = data[0].governanceModel;
       });
   }
 }
