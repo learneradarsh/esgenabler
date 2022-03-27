@@ -1,3 +1,5 @@
+import { SearchService } from './../../services/search.service';
+import { HttpService } from './../../services/http.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,10 +11,12 @@ import { Router } from '@angular/router';
 })
 export class NavComponent implements OnInit {
   showLogOut: boolean = false;
+  // searchTerm: string = '';
 
   constructor(
     private readonly router: Router,
-    private readonly authService: AuthService
+    private readonly authService: AuthService,
+    private readonly searchService: SearchService
   ) {}
 
   ngOnInit(): void {
@@ -28,5 +32,15 @@ export class NavComponent implements OnInit {
   goToLogout() {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  handleSearch(searchString: string) {
+    this.router
+      .navigate(['/dashboard'], {
+        queryParams: { company: searchString },
+      })
+      .then(() => {
+        window.location.reload();
+      });
   }
 }

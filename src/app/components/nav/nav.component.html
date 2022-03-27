@@ -48,10 +48,12 @@
     </ul>
     <form class="d-flex">
       <input
+        #searchTerm
         class="form-control me-2"
         type="search"
         placeholder="Search"
         aria-label="Search"
+        (keyup.enter)="handleSearch(searchTerm.value)"
       />
     </form>
     <button
