@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-company-summary',
@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-summary.component.scss'],
 })
 export class CompanySummaryComponent implements OnInit {
+  @Input() companyInfo: any = {};
   constructor() {}
 
   ngOnInit(): void {}
+
+  printData() {
+    window.print();
+  }
 }

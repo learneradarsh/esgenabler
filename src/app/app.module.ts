@@ -18,6 +18,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { IndicatorCardComponent } from './components/dashboard/indicator-card/indicator-card.component';
 import { EsgIndicatorChartComponent } from './components/dashboard/esg-indicator-chart/esg-indicator-chart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsCardComponent } from './components/dashboard/news-card/news-card.component';
+import { KpiCardComponent } from './components/dashboard/kpi-card/kpi-card.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     SettingsComponent,
     IndicatorCardComponent,
     EsgIndicatorChartComponent,
+    NewsCardComponent,
+    KpiCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,11 +27,11 @@
           <li>
             <a class="dropdown-item" [routerLink]="['/settings']">Settings</a>
           </li>
-          <li>
+          <!-- <li>
             <a class="dropdown-item" [routerLink]="['/showall']"
               >All Companies</a
             >
-          </li>
+          </li> -->
           <li>
             <a class="dropdown-item" [routerLink]="['/dashboard']"
               >Intelligence</a
@@ -48,14 +48,16 @@
     </ul>
     <form class="d-flex">
       <input
+        #searchTerm
         class="form-control me-2"
         type="search"
         placeholder="Search"
         aria-label="Search"
+        (keyup.enter)="handleSearch(searchTerm.value)"
       />
     </form>
     <button
-      *ngIf="!showLogIn"
+      *ngIf="!showLogOut"
       class="btn btn-success"
       type="submit"
       (click)="goToLogin()"
@@ -63,7 +65,7 @@
       Login
     </button>
     <button
-      *ngIf="showLogIn"
+      *ngIf="showLogOut"
       class="btn btn-success"
       type="submit"
       (click)="goToLogout()"
