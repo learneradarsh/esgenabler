@@ -79,6 +79,32 @@
               }"
             ></app-indicator-card>
           </div>
+          <div class="custom-flex m-top-5">
+            <app-kpi-card
+              [kpiData]="{
+                type: 'e',
+                key: 'Environment',
+                value: companyBasicInfo.eScore,
+                description: 'Industry Recommended: 90'
+              }"
+            ></app-kpi-card>
+            <app-kpi-card
+              [kpiData]="{
+                type: 's',
+                key: 'Social',
+                value: companyBasicInfo.sScore,
+                description: 'Industry Recommended: 18'
+              }"
+            ></app-kpi-card>
+            <app-kpi-card
+              [kpiData]="{
+                type: 'g',
+                key: 'Governance',
+                value: companyBasicInfo.gScore,
+                description: 'Industry Recommended: 18'
+              }"
+            ></app-kpi-card>
+          </div>
         </div>
       </div>
       <div

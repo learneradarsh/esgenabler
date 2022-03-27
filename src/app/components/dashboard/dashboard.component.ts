@@ -14,7 +14,6 @@ export class DashboardComponent implements OnInit {
     this.httpService.getDataForCompany('Microso').subscribe((data) => {
       this.companyBasicInfo = data[0].basicInfo;
       this.news = data[0].news;
-      console.log(this.news);
     });
   }
 }

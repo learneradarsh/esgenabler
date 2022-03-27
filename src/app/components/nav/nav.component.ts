@@ -19,7 +19,6 @@ export class NavComponent implements OnInit {
     this.authService.isUserLoggedIn().subscribe((data) => {
       this.showLogOut = data;
     });
-    console.log(this.showLogOut);
   }
 
   goToLogin() {
