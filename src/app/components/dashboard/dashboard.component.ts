@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
   environmentalModel: any = {};
   socialModel: any = {};
   governanceModel: any = {};
+  noDataCondition: boolean = true;
   ngOnInit(): void {
     this.route.queryParams
       .pipe(filter((params) => params.company))
@@ -31,6 +32,11 @@ export class DashboardComponent implements OnInit {
     this.httpService
       .getDataForCompany(this.searchTerm === '' ? 'Micro' : this.searchTerm)
       .subscribe((data) => {
+        if (data.length === 0) {
+          this.noDataCondition = true;
+        } else {
+          this.noDataCondition = false;
+        }
         this.companyBasicInfo = data[0].basicInfo;
         this.news = data[0].news;
         this.environmentalModel = data[0].environmentalModel;

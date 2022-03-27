@@ -1,164 +1,169 @@
-<div class="container custom-flex m-top-5">
-  <app-company-summary [companyInfo]="companyBasicInfo"></app-company-summary>
-  <div class="tabs-details">
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button
-          class="nav-link active"
-          id="overview-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#overview"
-          type="button"
-          role="tab"
-          aria-controls="overview"
-          aria-selected="true"
+<div class="m-top-5 nodata" *ngIf="noDataCondition; else dataIsThere">
+  No Data Found ):
+</div>
+<ng-template #dataIsThere>
+  <div class="container custom-flex m-top-5">
+    <app-company-summary [companyInfo]="companyBasicInfo"></app-company-summary>
+    <div class="tabs-details">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="overview-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#overview"
+            type="button"
+            role="tab"
+            aria-controls="overview"
+            aria-selected="true"
+          >
+            Overview
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="analysis-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#analysis"
+            type="button"
+            role="tab"
+            aria-controls="analysis"
+            aria-selected="false"
+          >
+            ESG Analysis
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="news-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#news"
+            type="button"
+            role="tab"
+            aria-controls="news"
+            aria-selected="false"
+          >
+            News
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="overview"
+          role="tabpanel"
+          aria-labelledby="overview-tab"
         >
-          Overview
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button
-          class="nav-link"
-          id="analysis-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#analysis"
-          type="button"
-          role="tab"
-          aria-controls="analysis"
-          aria-selected="false"
-        >
-          ESG Analysis
-        </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button
-          class="nav-link"
-          id="news-tab"
-          data-bs-toggle="tab"
-          data-bs-target="#news"
-          type="button"
-          role="tab"
-          aria-controls="news"
-          aria-selected="false"
-        >
-          News
-        </button>
-      </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-      <div
-        class="tab-pane fade show active"
-        id="overview"
-        role="tabpanel"
-        aria-labelledby="overview-tab"
-      >
-        <div class="container m-top-5">
-          <article class="company-summary">
-            <h4>Company Summary:</h4>
-            <p>
-              {{ companyBasicInfo.companySummary }}
-            </p>
-          </article>
-          <div class="custom-flex">
-            <app-indicator-card
-              [indicatorInfo]="{
-                heading: companyBasicInfo.sector,
-                icon: 'bi-cpu-fill'
-              }"
-            ></app-indicator-card>
-            <app-indicator-card
-              [indicatorInfo]="{
-                heading: companyBasicInfo.cap,
-                icon: 'bi-building'
-              }"
-            ></app-indicator-card>
-            <app-indicator-card
-              [indicatorInfo]="{
-                heading: companyBasicInfo.risk,
-                icon: 'bi-piggy-bank'
-              }"
-            ></app-indicator-card>
-          </div>
-          <div class="custom-flex m-top-5">
-            <app-kpi-card
-              [kpiData]="{
-                type: 'e',
-                key: 'Environment',
-                value: companyBasicInfo.eScore,
-                description: 'Industry Recommended: 90'
-              }"
-            ></app-kpi-card>
-            <app-kpi-card
-              [kpiData]="{
-                type: 's',
-                key: 'Social',
-                value: companyBasicInfo.sScore,
-                description: 'Industry Recommended: 18'
-              }"
-            ></app-kpi-card>
-            <app-kpi-card
-              [kpiData]="{
-                type: 'g',
-                key: 'Governance',
-                value: companyBasicInfo.gScore,
-                description: 'Industry Recommended: 18'
-              }"
-            ></app-kpi-card>
+          <div class="container m-top-5">
+            <article class="company-summary">
+              <h4>Company Summary:</h4>
+              <p>
+                {{ companyBasicInfo.companySummary }}
+              </p>
+            </article>
+            <div class="custom-flex">
+              <app-indicator-card
+                [indicatorInfo]="{
+                  heading: companyBasicInfo.sector,
+                  icon: 'bi-cpu-fill'
+                }"
+              ></app-indicator-card>
+              <app-indicator-card
+                [indicatorInfo]="{
+                  heading: companyBasicInfo.cap,
+                  icon: 'bi-building'
+                }"
+              ></app-indicator-card>
+              <app-indicator-card
+                [indicatorInfo]="{
+                  heading: companyBasicInfo.risk,
+                  icon: 'bi-piggy-bank'
+                }"
+              ></app-indicator-card>
+            </div>
+            <div class="custom-flex m-top-5">
+              <app-kpi-card
+                [kpiData]="{
+                  type: 'e',
+                  key: 'Environment',
+                  value: companyBasicInfo.eScore,
+                  description: 'Industry Recommended: 90'
+                }"
+              ></app-kpi-card>
+              <app-kpi-card
+                [kpiData]="{
+                  type: 's',
+                  key: 'Social',
+                  value: companyBasicInfo.sScore,
+                  description: 'Industry Recommended: 18'
+                }"
+              ></app-kpi-card>
+              <app-kpi-card
+                [kpiData]="{
+                  type: 'g',
+                  key: 'Governance',
+                  value: companyBasicInfo.gScore,
+                  description: 'Industry Recommended: 18'
+                }"
+              ></app-kpi-card>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="analysis"
-        role="tabpanel"
-        aria-labelledby="analysis-tab"
-      >
-        <div class="container esg-container m-top-5">
-          <div class="card esg-indicator-card border-green">
-            <h2 class="green">Environment</h2>
-            <ul>
-              <li
-                *ngFor="let property of environmentalModel | keyvalue"
-                class="captialize"
-              >
-                {{ property.key }}: <strong>{{ property.value }}</strong>
-              </li>
-            </ul>
-          </div>
-          <div class="card esg-indicator-card border-blue">
-            <h2 class="blue">Social</h2>
-            <ul>
-              <li
-                *ngFor="let property of socialModel | keyvalue"
-                class="captialize"
-              >
-                {{ property.key }}: <strong>{{ property.value }}</strong>
-              </li>
-            </ul>
-          </div>
-          <div class="card esg-indicator-card border-yellow">
-            <h2 class="yellow">Governance</h2>
-            <ul>
-              <li
-                *ngFor="let property of governanceModel | keyvalue"
-                class="captialize"
-              >
-                {{ property.key }}: <strong>{{ property.value }}</strong>
-              </li>
-            </ul>
+        <div
+          class="tab-pane fade"
+          id="analysis"
+          role="tabpanel"
+          aria-labelledby="analysis-tab"
+        >
+          <div class="container esg-container m-top-5">
+            <div class="card esg-indicator-card border-green">
+              <h2 class="green">Environment</h2>
+              <ul>
+                <li
+                  *ngFor="let property of environmentalModel | keyvalue"
+                  class="captialize"
+                >
+                  {{ property.key }}: <strong>{{ property.value }}</strong>
+                </li>
+              </ul>
+            </div>
+            <div class="card esg-indicator-card border-blue">
+              <h2 class="blue">Social</h2>
+              <ul>
+                <li
+                  *ngFor="let property of socialModel | keyvalue"
+                  class="captialize"
+                >
+                  {{ property.key }}: <strong>{{ property.value }}</strong>
+                </li>
+              </ul>
+            </div>
+            <div class="card esg-indicator-card border-yellow">
+              <h2 class="yellow">Governance</h2>
+              <ul>
+                <li
+                  *ngFor="let property of governanceModel | keyvalue"
+                  class="captialize"
+                >
+                  {{ property.key }}: <strong>{{ property.value }}</strong>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="tab-pane fade"
-        id="news"
-        role="tabpanel"
-        aria-labelledby="news-tab"
-      >
-        <div class="container m-top-5">
-          <app-news-card [newsData]="news"></app-news-card>
+        <div
+          class="tab-pane fade"
+          id="news"
+          role="tabpanel"
+          aria-labelledby="news-tab"
+        >
+          <div class="container m-top-5">
+            <app-news-card [newsData]="news"></app-news-card>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</ng-template>
