@@ -9,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   constructor(private readonly httpService: HttpService) {}
   news: any = {};
+  companyBasicInfo: any = {};
   ngOnInit(): void {
     this.httpService.getDataForCompany('Microso').subscribe((data) => {
+      this.companyBasicInfo = data[0].basicInfo;
       this.news = data[0].news;
       console.log(this.news);
     });

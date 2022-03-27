@@ -1,5 +1,5 @@
 <div class="container custom-flex m-top-5">
-  <app-company-summary></app-company-summary>
+  <app-company-summary [companyInfo]="companyBasicInfo"></app-company-summary>
   <div class="tabs-details">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -56,42 +56,25 @@
           <article class="company-summary">
             <h4>Company Summary:</h4>
             <p>
-              Reliance Industries Ltd is India`s largest private sector
-              enterprise, with businesses in the energy and materials value
-              chain.The company works under different business
-              segments:Exploration and Production,Petroleum Refining and
-              Marketing,Petrochemicals,Textiles and Retail.Products and brands
-              offered by the company includes:Crude oil and natural
-              gas,LPG,Propylene,Naphtha,Gasoline,Jet/Aviation Turbine
-              Fuel,Superior Kerosene Oil,High Speed Diesel,Sulphur,Petroleum
-              Coke,Polypropylene,High Density Polyethylene,Low Density
-              Polyethylene,Linear Low Density Polyethylene,Polyvinyl
-              Chloride,Poly Olefin,Suitings ,Shirtings,Readymade
-              Garments,Furnishing fabrics,Day curtains,Automotive
-              upholstery,Suitings,Ready-to-stitch,Take away fabric,Fleet
-              management services,Highway hospitality services,Vehicle care
-              services,Linear Alkyl Benzene,Paraxylene,Purified Terephthalic
-              Acid,Mono Ethylene Glycol,Staple Fibre,Filament Yarn,Texturised
-              yarn,Twisted yarn,Moisture management yarn,Quality certified sleep
-              products & Polyethylene terephthalate
+              {{ companyBasicInfo.companySummary }}
             </p>
           </article>
           <div class="custom-flex">
             <app-indicator-card
               [indicatorInfo]="{
-                heading: 'Technology',
+                heading: companyBasicInfo.sector,
                 icon: 'bi-cpu-fill'
               }"
             ></app-indicator-card>
             <app-indicator-card
               [indicatorInfo]="{
-                heading: 'Largecap',
+                heading: companyBasicInfo.cap,
                 icon: 'bi-building'
               }"
             ></app-indicator-card>
             <app-indicator-card
               [indicatorInfo]="{
-                heading: 'Low Risk',
+                heading: companyBasicInfo.risk,
                 icon: 'bi-piggy-bank'
               }"
             ></app-indicator-card>

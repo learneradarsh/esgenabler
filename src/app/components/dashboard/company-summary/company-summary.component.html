@@ -1,29 +1,47 @@
 <div class="card">
   <div class="card-head">
-    <h3>Reliance Industries Ltd</h3>
-    <small>RELIANCE</small>
+    <h3>{{ companyInfo.companyName }}</h3>
+    <small>{{ companyInfo.stockSymbol }}</small>
     <div class="main-indicators">
-      <h5>2,595.85 USD</h5>
+      <h5>{{ companyInfo.marketCap }}</h5>
       <h5 class="green"><i class="bi bi-caret-up-fill"></i>20</h5>
     </div>
-    <button class="btn btn-outline-success">Place Order</button>
+    <button class="btn btn-outline-success" (click)="printData()">
+      Save Data
+    </button>
   </div>
 
   <div class="card-body">
     <article>
       <h5 class="underline">Basic Details</h5>
-      <p>Market Cap: 232839</p>
-      <p>Region: Technology</p>
-      <p>Exchange Name: Technology</p>
-      <p>Exchange Name: NASDAQ</p>
-      <p>PE Ratio: 4</p>
+      <p>
+        Market Cap: <strong>{{ companyInfo.marketCap }}</strong>
+      </p>
+      <p>
+        Sector: <strong>{{ companyInfo.sector }}</strong>
+      </p>
+      <p>Exchange Name: <strong>NASDAQ</strong></p>
+      <p>
+        PE Ratio: <strong>{{ companyInfo.peRatio }}</strong>
+      </p>
     </article>
     <article>
       <h5 class="underline">ESG Details</h5>
-      <p>ESG Score: 14</p>
-      <p>Environment Score: 14</p>
-      <p>Social Score: 14</p>
-      <p>Governance Score: 14</p>
+      <p>
+        ESG Score: <strong>{{ companyInfo.totalESGScore }}</strong>
+      </p>
+      <p>
+        Environment Score: <strong>{{ companyInfo.eScore }}</strong>
+      </p>
+      <p>
+        Social Score: <strong>{{ companyInfo.sScore }}</strong>
+      </p>
+      <p>
+        Governance Score: <strong>{{ companyInfo.gScore }}</strong>
+      </p>
+      <p>
+        Rating: <strong>{{ companyInfo.rating }}</strong>
+      </p>
     </article>
   </div>
 </div>
