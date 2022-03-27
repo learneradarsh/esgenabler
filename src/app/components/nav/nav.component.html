@@ -55,7 +55,7 @@
       />
     </form>
     <button
-      *ngIf="!showLogIn"
+      *ngIf="!showLogOut"
       class="btn btn-success"
       type="submit"
       (click)="goToLogin()"
@@ -63,7 +63,7 @@
       Login
     </button>
     <button
-      *ngIf="showLogIn"
+      *ngIf="showLogOut"
       class="btn btn-success"
       type="submit"
       (click)="goToLogout()"

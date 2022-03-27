@@ -1,3 +1,4 @@
+import { HttpService } from './../../services/http.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor(private readonly httpService: HttpService) {}
+  news: any = {};
+  ngOnInit(): void {
+    this.httpService.getDataForCompany('Microso').subscribe((data) => {
+      this.news = data[0].news;
+      console.log(this.news);
+    });
+  }
 }

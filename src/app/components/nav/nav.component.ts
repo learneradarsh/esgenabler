@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  showLogIn: boolean = false;
+  showLogOut: boolean = false;
 
   constructor(
     private readonly router: Router,
@@ -16,7 +16,10 @@ export class NavComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.showLogIn = this.authService.isUserLoggedIn();
+    this.authService.isUserLoggedIn().subscribe((data) => {
+      this.showLogOut = data;
+    });
+    console.log(this.showLogOut);
   }
 
   goToLogin() {
